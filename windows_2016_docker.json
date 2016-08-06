@@ -27,7 +27,8 @@
       "ram_size_mb": 2048,
       "cpu": 2,
       "switch_name":"{{user `hyperv_switchname`}}",
-      "enable_secure_boot":true
+      "enable_secure_boot":true,
+      "enable_virtualization_extensions":true
     },
     {
       "type": "vmware-iso",
@@ -127,7 +128,6 @@
     },
     {
       "type": "powershell",
-      "execute_command": "powershell \"& { {{.Vars}}{{.Path}}; exit $LastExitCode}\"",
       "scripts": [
         "./scripts/docker/add-docker-group.ps1",
         "./scripts/docker/install-docker.ps1",
